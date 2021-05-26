@@ -9,7 +9,9 @@ function QuestionOne() {
   const [isLoaded, setIsLoaded] = useState(true);
   const [chosenAnswer, changeAnswer] = useState("");
   const [fetchSite, changeFetchSite] = useState(
-    "https://api.themoviedb.org/3/discover/tv?api_key=5471a39659aec129ecf2682b4262b7fb&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false"
+    "https://api.themoviedb.org/3/discover/tv?" +
+      apiKey +
+      "&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false"
   );
   const [questionOneString, changeQ1String] = useState("");
   const [questionTwoString, changeQ2String] = useState("");
@@ -97,11 +99,6 @@ function QuestionOne() {
         }
       );
   }
-
-  // function startAgain() {
-  //   setQuestionNumber(1);
-  //   console.log("start again called");
-  // }
 
   return (
     <div className="quiz">
