@@ -10,7 +10,8 @@ function Skip() {
   );
   const [showDesc, setShowDesc] = useState("");
   const site =
-    "https://api.themoviedb.org/3/tv/3?=1&api_key=5471a39659aec129ecf2682b4262b7fb";
+    "https://api.themoviedb.org/3/tv/3?=1&api_key=" +
+    process.env.REACT_APP_API_KEY;
 
   function handleClick() {
     click(true);
@@ -19,7 +20,8 @@ function Skip() {
     fetch(
       "https://api.themoviedb.org/3/tv/" +
         number +
-        "?=3&api_key=5471a39659aec129ecf2682b4262b7fb"
+        "?=3&api_key=" +
+        process.env.REACT_APP_API_KEY
     )
       .then((res) => res.json())
       .then(

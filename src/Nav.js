@@ -19,7 +19,7 @@ function Nav() {
           <Link to="/skip">Skip the Quiz</Link>
         </li>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/showfinder">Home</Link>
         </li>
       </ul>
     </div>
