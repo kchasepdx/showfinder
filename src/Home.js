@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "./Image";
-import TV from "../public/tv.png";
+import TV from "./tv.png";
 
 function Home() {
   return (
