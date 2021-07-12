@@ -2,6 +2,7 @@ import React from "react";
 import Image from "./Image";
 
 function Home() {
+  console.log(process.env.REACT_APP_API_KEY);
   return (
     <div className="App">
       <h1 className="App-header"> SHOW FINDER </h1>
