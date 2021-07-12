@@ -12,8 +12,8 @@ const Main = () => {
     <Switch>
       {" "}
       {/* The Switch decides which component to show based on the current URL.*/}
+      <Route path="/showfinder" component={Home}></Route>
       <Route exact path="/skip" component={Skip}></Route>
-      <Route exact path="/" component={Home}></Route>
       <Route exact path="/quiz" component={Quiz}></Route>
       <Route exact path="/Question1" component={QuestionOne}></Route>
       <Route exact path="/about" component={About}></Route>
