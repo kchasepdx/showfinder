@@ -8,9 +8,10 @@ function QuestionOne() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(true);
   const [chosenAnswer, changeAnswer] = useState("");
+  const apiKey = process.env.REACT_APP_API_KEY;
   const [fetchSite, changeFetchSite] = useState(
-    "https://api.themoviedb.org/3/discover/tv?" +
-      process.env.REACT_APP_API_KEY +
+    "https://api.themoviedb.org/3/discover/tv?api_key=" +
+      apiKey +
       "&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false"
   );
   const [questionOneString, changeQ1String] = useState("");
@@ -19,7 +20,6 @@ function QuestionOne() {
   const [showName, setShowName] = useState("");
   const [showDesc, setShowDesc] = useState("");
   const [lastPage, setLastPage] = useState(false);
-  const apiKey = process.env.REACT_APP_API_KEY;
 
   function handleSubmit() {
     setQuestionNumber(questionNumber + 1);
@@ -70,6 +70,7 @@ function QuestionOne() {
     const URL =
       fetchSite + questionOneString + questionTwoString + questionThreeString;
     console.log(URL);
+    console.log(apiKey);
 
     fetch(URL)
       .then((res) => res.json())
