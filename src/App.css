@@ -145,7 +145,6 @@ font-family: 'PT Serif', serif; */
   text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
   text-align: center;
   transition: all 0.2s;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
