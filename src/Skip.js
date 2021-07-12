@@ -9,20 +9,13 @@ function Skip() {
     Math.floor(Math.random() * (500 - 1) + 1)
   );
   const [showDesc, setShowDesc] = useState("");
-  const site =
-    "https://api.themoviedb.org/3/tv/3?=1&api_key=" +
-    process.env.REACT_APP_API_KEY;
+  const api = process.env.REACT_APP_API_KEY;
 
   function handleClick() {
     click(true);
     setNumber(Math.floor(Math.random() * (900 - 1) + 1));
 
-    fetch(
-      "https://api.themoviedb.org/3/tv/" +
-        number +
-        "?=3&api_key=" +
-        process.env.REACT_APP_API_KEY
-    )
+    fetch("https://api.themoviedb.org/3/tv/" + number + "?=3&api_key=" + api)
       .then((res) => res.json())
       .then(
         (result) => {
