@@ -41,7 +41,7 @@ function Skip() {
   } else {
     return (
       <div className="App">
-        <h1 className="App-header"> Instant Gratification </h1>{" "}
+        <h1 className="app-header"> Instant Gratification </h1>{" "}
         {isClicked ? (
           <p>You should Watch...</p>
         ) : (
@@ -50,7 +50,7 @@ function Skip() {
         {isClicked && <h1 className="Show-suggestion">{items} </h1>}
         {isClicked && <p>{showDesc}</p>}
         <form>
-          <button className="Quiz-start" type="button" onClick={handleClick}>
+          <button className="quiz-start" type="button" onClick={handleClick}>
             {" "}
             Click Me.{" "}
           </button>{" "}

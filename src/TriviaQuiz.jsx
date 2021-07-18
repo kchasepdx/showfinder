@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import AnswerBubble from "./AnswerBubble";
 import Button from "./Button";
 import triviaData from "./trivia";
@@ -9,9 +9,7 @@ function TriviaQuiz() {
   const [chosenAnswer, changeAnswer] = useState("");
   const [lastPage, setLastPage] = useState(false);
   const [Answer, submitAnswer] = useState("");
-  const [celebrate, setCelebrate] = useState("");
   const [score, addToScore] = useState(0);
-  const history = useHistory();
 
   function handleSubmit() {
     setQuestionNumber(questionNumber + 1);
@@ -39,6 +37,7 @@ function TriviaQuiz() {
   function handleClick(event) {
     let choice = event.target.getAttribute("Name");
 
+    // eslint-disable-next-line array-callback-return
     triviaData.map((question) => {
       if (choice === question.answerOptions[0]) {
         changeAnswer(1);
@@ -57,18 +56,14 @@ function TriviaQuiz() {
   }
 
   function getScore() {
-    setQuestionNumber(questionNumber + 2);
-    console.log(questionNumber);
-  }
-
-  function handleReturn() {
-    history.push("/");
+    setLastPage(true);
+    setQuestionNumber(questionNumber + 1);
   }
 
   return (
     <div className="quiz">
-      {questionNumber > 10 ? (
-        <h1 className="score-header"> You scored {score} out of 10.</h1>
+      {lastPage === true ? (
+        <h1 className="Score-header"> You scored {score} out of 10.</h1>
       ) : (
         <div>
           <h1 className="question-header"> Question {questionNumber}</h1>
@@ -115,19 +110,17 @@ function TriviaQuiz() {
             onClick={getScore}
             text="Show me my score!"
           />
-        ) : (
+        ) : !lastPage ? (
           <Button
             className="quiz-start btn"
             type="button"
-            onClick={questionNumber === 11 ? handleReturn : handleSubmit}
-            text={
-              questionNumber === 11 ? (
-                "Return Home"
-              ) : (
-                <i class="fas fa-play"></i>
-              )
-            }
+            onClick={handleSubmit}
+            text="submit"
           />
+        ) : (
+          <Link className="home-link" to="/showfinder">
+            Return to Home Page
+          </Link>
         )}
       </div>
     </div>

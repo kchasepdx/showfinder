@@ -9,11 +9,3 @@ function AnswerBubble(props) {
 }
 
 export default AnswerBubble;
-
-{
-  /* <div
-          onClick={handleClick}
-          Name="Laugh"
-          className={`AnswerBox1 ${one ? "Highlight" : ""}`}
-        >Laugh</div> */
-}

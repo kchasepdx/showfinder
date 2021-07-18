@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Link, Redirect } from "react-router-dom";
 import AnswerBubble from "./AnswerBubble";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 
 function QuestionOne() {
   const [questionNumber, setQuestionNumber] = useState(1);
@@ -9,11 +9,10 @@ function QuestionOne() {
   const [isLoaded, setIsLoaded] = useState(true);
   const [chosenAnswer, changeAnswer] = useState("");
   const apiKey = process.env.REACT_APP_API_KEY;
-  const [fetchSite, changeFetchSite] = useState(
+  const fetchSite =
     "https://api.themoviedb.org/3/discover/tv?api_key=" +
-      apiKey +
-      "&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false"
-  );
+    apiKey +
+    "&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false";
   const [questionOneString, changeQ1String] = useState("");
   const [questionTwoString, changeQ2String] = useState("");
   const [questionThreeString, changeQ3String] = useState("");
@@ -91,18 +90,21 @@ function QuestionOne() {
         (error) => {
           setIsLoaded(true);
           setError(error);
+          console.log(error);
+          console.log(isLoaded);
         }
       );
   }
 
   return (
     <div className="quiz">
+      {error && console.log(error)}
       {questionNumber <= 3 ? (
-        <h1 className="App-header"> Question {questionNumber}</h1>
+        <h1 className="question-header"> Question {questionNumber}</h1>
       ) : (
-        <h1 className="App-header">All done!</h1>
+        <h1 className="question-header">All done!</h1>
       )}
-      <p className="Question-text">
+      <p className="question-text">
         {" "}
         {questionNumber === 1 && "Are you in the mood to..."}{" "}
         {questionNumber === 2 &&
@@ -180,22 +182,27 @@ function QuestionOne() {
           <p>{showDesc}</p>
         </div>
       )}
-
-      {questionNumber === 3 ? (
-        <Button
-          className="Quiz-start"
-          type="button"
-          onClick={getShow}
-          text="Get Show!"
-        />
-      ) : (
-        <Button
-          className="Quiz-start"
-          type={lastPage ? "submit" : "button"}
-          onClick={handleSubmit}
-          text={lastPage ? "Thanks for taking the quiz!" : ">>"}
-        />
-      )}
+      <div className="center">
+        {questionNumber === 3 ? (
+          <Button
+            className="quiz-start"
+            type="button"
+            onClick={getShow}
+            text="Get Show!"
+          />
+        ) : lastPage ? (
+          <Link className="home-link" to="/">
+            Return Home{" "}
+          </Link>
+        ) : (
+          <Button
+            className="quiz-start"
+            type={"button"}
+            onClick={handleSubmit}
+            text=">>"
+          />
+        )}
+      </div>
     </div>
   );
 }

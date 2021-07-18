@@ -4,16 +4,18 @@ font-family: 'PT Serif', serif; */
 
 .App {
   text-align: center;
+  align-content: center;
 }
 
 .active {
   color: #f00;
 }
 
-.About-Text {
+.about-text {
   background-color: cornflowerblue;
-  margin: 100px 100px;
-  padding: 50px 50px;
+  margin: 10% 2% 2% 2%;
+  padding: 15px;
+  text-align: justify;
 }
 
 .wrapper {
@@ -81,7 +83,14 @@ font-family: 'PT Serif', serif; */
   color: white;
   border-color: #e4fbff;
 }
-
+.center {
+  margin: 0;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
 .Highlight {
   background-color: #2f5d62;
 }
@@ -93,13 +102,7 @@ font-family: 'PT Serif', serif; */
   width: 50%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+.app-header {
   min-height: 10vh;
   display: flex;
   flex-direction: column;
@@ -109,6 +112,7 @@ font-family: 'PT Serif', serif; */
   color: white;
   font-family: "Averia Serif Libre";
   background-color: #c6a9a3;
+  margin: 10% auto 1% auto;
 }
 
 .Score-header {
@@ -123,17 +127,21 @@ font-family: 'PT Serif', serif; */
   background-color: #c6a9a3;
   text-align: center;
 }
+#sub-title {
+  font-size: 2rem;
+  margin: 0 auto 5% auto;
+}
 
 .Quiz {
   text-align: center;
   background-color: #c6a9a3;
 }
 
-.Quiz-start {
-  padding: 0.3em 1.2em;
+.quiz-start {
+  padding: 0.5em 1.2em;
+  width: 10vw;
   position: static;
-  margin: auto;
-  left: 47%;
+  margin: 1% auto;
   border: 0.16em solid rgba(255, 255, 255, 0);
   border-radius: 2em;
   box-sizing: border-box;
@@ -145,20 +153,19 @@ font-family: 'PT Serif', serif; */
   text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
   text-align: center;
   transition: all 0.2s;
-  justify-content: center;
-  align-items: center;
 }
 
 .Hide-button {
   display: hidden;
 }
 
-.Quiz-start:hover {
+.quiz-start:hover {
   border-color: rgba(255, 255, 255, 1);
 }
 
-.Question-text {
+.question-text {
   text-align: center;
+  font-size: 2rem;
 }
 
 p {
@@ -199,18 +206,111 @@ li a {
   background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png");
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .Show-suggestion {
   font-size: 65px;
   font-family: "Averia Serif Libre", cursive;
   color: #413c69;
   text-align: center;
+}
+
+#tv-icon {
+  font-size: 6rem;
+  margin: 5vh auto 0 auto;
+  width: 100vw;
+  color: white;
+  text-align: center;
+}
+
+.nav-link {
+  font-size: 1.5 rem;
+  color: white;
+}
+
+.nav-link:hover {
+  background-color: white;
+  color: #c6a9a3;
+  font-weight: bold;
+}
+
+.question-header {
+  font-size: 2rem;
+  margin-top: 15%;
+  text-align: center;
+}
+
+.home-link {
+  background-color: white;
+  padding: 10px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 1rem;
+  color: #c6a9a3;
+  font-weight: bold;
+  font-family: "PT Serif", serif;
+}
+
+.retake-link {
+  background-color: white;
+  padding: 10px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 1rem;
+  color: #c6a9a3;
+  font-weight: bold;
+  font-family: "PT Serif", serif;
+}
+
+@media screen and (min-width: 412px) {
+  .navbar-narrow {
+    display: none;
+  }
+}
+
+/* PHONES */
+@media screen and (max-width: 411px) {
+  .navbar-fixed {
+    display: none;
+  }
+  .center {
+    top: 90%;
+  }
+
+  .dropdown-item {
+    font-family: "PT Serif", serif;
+  }
+
+  .dropdown-item:hover {
+    background-color: #c6a9a3;
+    color: white;
+  }
+
+  .home-link {
+    background-color: white;
+    padding: 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #c6a9a3;
+    font-weight: bold;
+    font-family: "PT Serif", serif;
+  }
+
+  .app-header {
+    margin: 25% auto 1% auto;
+  }
+
+  .quiz-start {
+    width: 30vw;
+  }
+
+  .score-header {
+    margin-top: 30%;
+    text-align: center;
+    font-size: 4rem;
+  }
+
+  .wrapper {
+    display: inline;
+    margin: 1%;
+  }
 }

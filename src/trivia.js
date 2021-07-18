@@ -49,13 +49,12 @@ const triviaData = [
     ],
   },
   {
-    question:
-      "What was the first American drama series to react to the September 11, 2001 terrorist attacks on the United States?",
+    question: "What was the first American drama series to react to 911?",
     answerOptions: ["Law & Order", "The West Wing", "Alias", "24"],
   },
   {
     question:
-      "On 'Bob's Burgers', what is the name of the purple store between Jimmy Pesto's Pizzeria and the bank?",
+      "On 'Bob's Burgers', what is purple store between Jimmy Pesto's Pizzeria and the bank?",
     answerOptions: [
       "Flowerama",
       "Yo Yo Yo, We Got YoYos",
