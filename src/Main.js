@@ -9,7 +9,6 @@ import TriviaQuiz from "./TriviaQuiz";
 
 const Main = () => {
   return (
-    <BrowserRouter>
     <Switch>
       {" "}
       {/* The Switch decides which component to show based on the current URL.*/}
@@ -20,7 +19,6 @@ const Main = () => {
       <Route exact path="/about" component={About}></Route>
       <Route exact path="/TriviaQuiz" component={TriviaQuiz}></Route>
     </Switch>
-    </BrowserRouter>
   );
 };
 
