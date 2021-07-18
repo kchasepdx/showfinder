@@ -1,7 +1,10 @@
 import React from "react";
+import Nav from "./Nav";
+
 function About() {
   return (
     <div>
+      <Nav />
       <i id="tv-icon" class="fas fa-tv"></i>
       <div className="about-text">
         <p>
