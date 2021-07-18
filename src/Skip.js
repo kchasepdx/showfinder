@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Nav from "./Nav";
 
 function Skip() {
   const [error, setError] = useState(null);
@@ -41,6 +42,7 @@ function Skip() {
   } else {
     return (
       <div className="App">
+        <Nav />
         <h1 className="app-header"> Instant Gratification </h1>{" "}
         {isClicked ? (
           <p>You should Watch...</p>

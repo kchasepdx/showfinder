@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import AnswerBubble from "./AnswerBubble";
 import Button from "./Button";
 import triviaData from "./trivia";
+import Nav from "./Nav";
 
 function TriviaQuiz() {
   const [questionNumber, setQuestionNumber] = useState(1);
@@ -62,6 +63,7 @@ function TriviaQuiz() {
 
   return (
     <div className="quiz">
+      <Nav />
       {lastPage === true ? (
         <h1 className="Score-header"> You scored {score} out of 10.</h1>
       ) : (

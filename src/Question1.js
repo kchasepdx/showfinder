@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import AnswerBubble from "./AnswerBubble";
 import Button from "./Button";
 import { Link } from "react-router-dom";
+import Nav from "./Nav";
 
 function QuestionOne() {
   const [questionNumber, setQuestionNumber] = useState(1);
@@ -98,6 +99,7 @@ function QuestionOne() {
 
   return (
     <div className="quiz">
+      <Nav />
       {error && console.log(error)}
       {questionNumber <= 3 ? (
         <h1 className="question-header"> Question {questionNumber}</h1>
