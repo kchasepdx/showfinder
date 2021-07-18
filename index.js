@@ -7,7 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
   
-    <App /> /* The various pages will be displayed by the `Main` component. */}
+    <App /> /* The various pages will be displayed by the `Main` component. */
   
   document.getElementById("root")
 );
