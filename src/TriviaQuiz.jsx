@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import AnswerBubble from "./AnswerBubble";
 import Button from "./Button";
 import triviaData from "./trivia";
@@ -11,6 +11,7 @@ function TriviaQuiz() {
   const [Answer, submitAnswer] = useState("");
   const [celebrate, setCelebrate] = useState("");
   const [score, addToScore] = useState(0);
+  const history = useHistory();
 
   function handleSubmit() {
     setQuestionNumber(questionNumber + 1);
@@ -30,11 +31,7 @@ function TriviaQuiz() {
     ) {
       //   setCelebrate("correct");
       addToScore(score + 1);
-      console.log(score);
-      console.log("right");
     } else {
-      setCelebrate("wrong");
-      console.log("wrong");
       console.log(score);
     }
   }
@@ -60,17 +57,22 @@ function TriviaQuiz() {
   }
 
   function getScore() {
-    setLastPage(true);
+    setQuestionNumber(questionNumber + 2);
+    console.log(questionNumber);
+  }
+
+  function handleReturn() {
+    history.push("/");
   }
 
   return (
     <div className="quiz">
-      {lastPage === true ? (
-        <h1 className="Score-header"> You scored {score} out of 10.</h1>
+      {questionNumber > 10 ? (
+        <h1 className="score-header"> You scored {score} out of 10.</h1>
       ) : (
         <div>
-          <h1 className="App-header"> Question {questionNumber}</h1>
-          <p className="Question-text">
+          <h1 className="question-header"> Question {questionNumber}</h1>
+          <p className="question-text">
             {" "}
             {triviaData[questionNumber - 1].question}{" "}
           </p>
@@ -105,22 +107,29 @@ function TriviaQuiz() {
           />
         </div>
       )}
-
-      {questionNumber === 10 ? (
-        <Button
-          className="Quiz-start"
-          type="button"
-          onClick={getScore}
-          text="Show me my score!"
-        />
-      ) : (
-        <Button
-          className="Quiz-start"
-          type="button"
-          onClick={lastPage ? null : handleSubmit}
-          text={lastPage ? "Thanks for taking the quiz!" : ">>"}
-        />
-      )}
+      <div className="center">
+        {questionNumber === 10 ? (
+          <Button
+            className="quiz-start btn"
+            type="button"
+            onClick={getScore}
+            text="Show me my score!"
+          />
+        ) : (
+          <Button
+            className="quiz-start btn"
+            type="button"
+            onClick={questionNumber === 11 ? handleReturn : handleSubmit}
+            text={
+              questionNumber === 11 ? (
+                "Return Home"
+              ) : (
+                <i class="fas fa-play"></i>
+              )
+            }
+          />
+        )}
+      </div>
     </div>
   );
 }
