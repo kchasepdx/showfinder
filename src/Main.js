@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Skip from "./Skip";
 import Home from "./Home";
 import Quiz from "./Quiz";
