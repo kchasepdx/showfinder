@@ -118,7 +118,7 @@ function TriviaQuiz() {
             text="submit"
           />
         ) : (
-          <Link className="home-link" to="/showfinder">
+          <Link className="home-link" to="/">
             Return to Home Page
           </Link>
         )}

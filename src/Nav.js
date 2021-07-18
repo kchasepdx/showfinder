@@ -29,7 +29,7 @@ function Nav() {
             </Link>
           </li>
           <li>
-            <Link className="nav-link" to="/showfinder">
+            <Link className="nav-link" to="/">
               Home
             </Link>
           </li>
