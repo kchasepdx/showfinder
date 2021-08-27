@@ -29,7 +29,6 @@
               The site uses API from The Movie Database to generate tv show
               recommendations.
             </p>
-
             <h4>Technology Used</h4>
             <ul>
               <li>Javascript</li>
