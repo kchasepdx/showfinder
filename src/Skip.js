@@ -50,7 +50,7 @@ function Skip() {
           <p> All it takes is 1 click</p>
         )}
         {isClicked && <h1 className="Show-suggestion">{items} </h1>}
-        {isClicked && <p>{showDesc}</p>}
+        {isClicked && <p className="show-desc">{showDesc}</p>}
         <form>
           <button className="quiz-start" type="button" onClick={handleClick}>
             {" "}

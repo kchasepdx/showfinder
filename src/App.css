@@ -314,3 +314,13 @@ li a {
     margin: 1%;
   }
 }
+
+.show-desc {
+  background-color: white;
+  color: #413c69;
+  padding: 10px;
+  border-radius: 15px;
+  margin: 5%;
+  line-height: normal;
+  border: cornflowerblue 5px solid;
+}

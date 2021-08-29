@@ -181,7 +181,7 @@ function QuestionOne() {
       {questionNumber === 4 && (
         <div className="App">
           <h1 className="Show-suggestion">{showName}</h1>
-          <p>{showDesc}</p>
+          <p className="show-desc">{showDesc}</p>
         </div>
       )}
       <div className="center">
